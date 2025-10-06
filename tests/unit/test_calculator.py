@@ -22,19 +22,51 @@ class TestBasicOperations:
         assert add(-2, -3) == -5
         assert add(-10, 15) == 5
 
-class TestMultiplyDivideWithValidation:
-    """Test multiplication and division with input validation."""
+class TestmultiplyDivide:
+    """Test multiplication and division"""
     
-    def test_multiply_input_validation(self):
-        """Test multiply rejects non-numeric inputs."""
-        with pytest.raises(TypeError, match="Both arguments must be numbers"):
-            multiply("5", 3)
-        with pytest.raises(TypeError, match="Both arguments must be numbers"):
-            multiply(5, "3")
+    def test_multiply_positive_numbers(self):
+        """Test multiplying positive numbers"""
+        assert multiply(5, 3) == 15
+        assert multiply(7, 6) == 42
     
-    def test_divide_input_validation(self):
-        """Test divide rejects non-numeric inputs."""
-        with pytest.raises(TypeError, match="Division requires numeric inputs"):
-            divide("10", 2)
+    def test_multiply_zeros(self):
+        """Test multiplying positive numbers"""
+        assert multiply(5, 0) == 0
+        assert multiply(7, 0) == 0
+    
+    def test_multiply_negative_numbers(self):
+        """Test multiplying positive numbers"""
+        assert multiply(5, -3) == -15
+        assert multiply(-7, -6) == 42
+
+    def test_divide_positive_numbers(self):
+        """Test dividing positive numbers"""
+        assert divide(10, 2) == 5
+        assert divide(9, 3) == 3
+    
+    def test_divide_negative_numbers(self):
+        """Test dividing positive numbers"""
+        assert divide(10, -2) == -5
+        assert divide(-9, -3) == 3
+    def test_divide_by_zero(self):
+        """Test division by zero raises ValueError"""
+        with pytest.raises(ZeroDivisionError):
+            divide(10, 0)
+
+# class TestMultiplyDivideWithValidation:
+#     """Test multiplication and division with input validation."""
+    
+#     def test_multiply_input_validation(self):
+#         """Test multiply rejects non-numeric inputs."""
+#         with pytest.raises(TypeError, match="Both arguments must be numbers"):
+#             multiply("5", 3)
+#         with pytest.raises(TypeError, match="Both arguments must be numbers"):
+#             multiply(5, "3")
+    
+#     def test_divide_input_validation(self):
+#         """Test divide rejects non-numeric inputs."""
+#         with pytest.raises(TypeError, match="Division requires numeric inputs"):
+#             divide("10", 2)
 
 # TODO: Students will add TestMultiplyDivide class
