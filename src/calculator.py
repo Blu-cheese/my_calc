@@ -18,6 +18,12 @@ def multiply(a, b):
 def divide(a, b):
     return a/b
 
+def power(a,b):
+    return a**b
+
+def square(a):
+    return a*a 
+
 # TODO: Students will add multiply, divide, power, sqrt functions
 
 if __name__ == "__main__":

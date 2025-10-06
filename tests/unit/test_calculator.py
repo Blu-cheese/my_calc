@@ -3,7 +3,7 @@ Unit Tests for Calculator
 Students start with 2 passing tests, then add more
 """
 import pytest
-from src.calculator import add, divide, multiply, subtract
+from src.calculator import add, divide, multiply, subtract,power ,square
 
 class TestBasicOperations:
     """Test basic arithmetic operations"""
@@ -53,7 +53,28 @@ class TestmultiplyDivide:
         """Test division by zero raises ValueError"""
         with pytest.raises(ZeroDivisionError):
             divide(10, 0)
+class TestPowerSquare:
+    """Test power and square functions"""
+    
+    def test_power_positive_numbers(self):
+        """Test power with positive numbers"""
+        assert power(2, 3) == 8
+        assert power(5, 0) == 1
+    
+    def test_power_negative_exponent(self):
+        """Test power with negative exponent"""
+        assert power(2, -2) == 0.25
+        assert power(5, -1) == 0.2
 
+    def test_square_positive_number(self):
+        """Test square of a positive number"""
+        assert square(4) == 16
+        assert square(7) == 49
+    
+    def test_square_negative_number(self):
+        """Test square of a negative number"""
+        assert square(-4) == 16
+        assert square(-7) == 49
 # class TestMultiplyDivideWithValidation:
 #     """Test multiplication and division with input validation."""
     
